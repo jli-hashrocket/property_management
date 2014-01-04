@@ -12,6 +12,7 @@
     <td>Zip code</td>
     <td>Description</td>
     <td>Owner</td>
+    <td>Actions</td>
   </thead>
   <% @buildings.each do |building| %>
     <tr>
@@ -20,7 +21,12 @@
       <td><%= building.state %></td>
       <td><%= building.zip %></td>
       <td><%= building.description %></td>
-      <td></td>
+      <td>some guy</td>
+      <td>
+        <%= link_to 'Show', building_path(building) %> |
+        <%= link_to 'Edit', edit_building_path(building) %> |
+        <%= link_to 'Delete', building, method: :delete %>
+      </td>
     </tr>
   <% end %>
 </table>
