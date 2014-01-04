@@ -1,2 +1,24 @@
 <h1>Property Management</h1>
 <%= link_to "Add Building", new_building_path %>
+
+<table cellpadding=5, cellspacing=0, border=0>
+  <thead>
+    <td>Address</td>
+    <td>City</td>
+    <td>State</td>
+    <td>Zip code</td>
+    <td>Description</td>
+    <td>Owner</td>
+  </thead>
+  <% @buildings.each do |building| %>
+    <tr>
+      <td><%= building.address %></td>
+      <td><%= building.city %></td>
+      <td><%= building.state %></td>
+      <td><%= building.zip %></td>
+      <td><%= building.description %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+
