@@ -10,6 +10,7 @@
     <td>First Name</td>
     <td>Email</td>
     <td>Company</td>
+    <td>Actions</td>
   </thead>
   <% @owners.each do |owner| %>
     <tr>
@@ -17,6 +18,12 @@
       <td><%= owner.first_name %></td>
       <td><%= owner.email %></td>
       <td><%= owner.company %></td>
+      <td>
+        <%= link_to 'Show', owner_path(owner) %> |
+        <%= link_to 'Edit', edit_owner_path(owner) %> |
+        <%= link_to 'Delete', owner, method: :delete %>
+      </td>
+
     </tr>
   <% end %>
 </table>
