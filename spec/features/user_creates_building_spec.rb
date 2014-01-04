@@ -32,6 +32,9 @@ feature 'User creates building entry', %q{
       click_on "Create Building"
 
       expect(page).to have_content("Building was saved successfully")
+      expect(page).to have_content("Back to Property Management")
+      expect(page).to have_content("Edit")
+
     end
   end
 
