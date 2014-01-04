@@ -26,6 +26,9 @@
   <br>
   <%= f.label :description %><br>
   <%= f.text_area :description %><br>
+
+  <%= f.label :owner %><br/>
+  <%= collection_select( :building, :owner_id, Owner.all, :id, :owner_full_name , {include_blank: 'None'}) %><br/>
   <br>
 </div>
 

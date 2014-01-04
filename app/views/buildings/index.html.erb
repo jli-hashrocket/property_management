@@ -21,7 +21,11 @@
       <td><%= building.state %></td>
       <td><%= building.zip %></td>
       <td><%= building.description %></td>
-      <td>some guy</td>
+      <% if building.owner != nil %>
+        <td><%= building.owner.first_name %> <%= building.owner.last_name %></td>
+      <% else %>
+        <td>None</td>
+      <% end %>
       <td>
         <%= link_to 'Show', building_path(building) %> |
         <%= link_to 'Edit', edit_building_path(building) %> |
