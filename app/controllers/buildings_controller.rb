@@ -1,14 +1,18 @@
 class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
+    @owners = Owner.all
   end
 
   def new
     @building = Building.new
+    @owners = Owner.all
   end
 
   def create
     @building = Building.new(building_params)
+    @owners = Owner.all
+
     if @building.save
       redirect_to @building, notice: "Building was saved successfully."
     else
@@ -42,6 +46,6 @@ class BuildingsController < ApplicationController
 
   private
     def building_params
-      params.require(:building).permit(:address, :city, :state, :zip, :description)
+      params.require(:building).permit(:address, :city, :state, :zip, :description, :owner_id)
     end
 end

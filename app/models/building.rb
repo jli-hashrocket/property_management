@@ -6,6 +6,9 @@ class Building < ActiveRecord::Base
   validates_inclusion_of :state, in: STATES
   validates_presence_of :zip, numericality: true
 
-  belongs_to :owner
+  belongs_to :owner,
+    inverse_of: :buildings,
+    dependent: :destroy
+
 
 end

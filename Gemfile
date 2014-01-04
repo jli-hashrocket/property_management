@@ -39,6 +39,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'shoulda'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
