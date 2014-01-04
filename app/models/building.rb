@@ -7,4 +7,5 @@ class Building < ActiveRecord::Base
   validates_presence_of :zip, numericality: true
 
   belongs_to :owner
+
 end
