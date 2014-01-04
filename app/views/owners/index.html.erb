@@ -1,0 +1,22 @@
+<h1>Owners Listing</h1>
+<%= link_to "Add Building", new_building_path %> |
+<%= link_to "Add Owner", new_owner_path %> |
+<%= link_to "Go to Property Management", root_path %>
+
+
+<table cellpadding=5, cellspacing=0, border=0>
+  <thead>
+    <td>Last Name</td>
+    <td>First Name</td>
+    <td>Email</td>
+    <td>Company</td>
+  </thead>
+  <% @owners.each do |owner| %>
+    <tr>
+      <td><%= owner.last_name %></td>
+      <td><%= owner.first_name %></td>
+      <td><%= owner.email %></td>
+      <td><%= owner.company %></td>
+    </tr>
+  <% end %>
+</table>
