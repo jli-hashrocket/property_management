@@ -26,7 +26,7 @@ class BuildingsController < ApplicationController
 
   def update
     @building = Building.find(params[:id])
-    if @building.update
+    if @building.update(building_params)
       redirect_to @building, notice: "Building was updated successfully"
     else
       render action: 'edit'
