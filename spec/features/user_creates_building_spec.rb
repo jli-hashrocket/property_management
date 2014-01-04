@@ -35,4 +35,15 @@ feature 'User creates building entry', %q{
     end
   end
 
+  context 'without valid attributes' do
+    it 'does not create building entry' do
+      visit root_path
+      click_on "Add Building"
+      click_on "Create Building"
+      expect(page).to have_content("Address can't be blank")
+      expect(page).to have_content("City can't be blank")
+      expect(page).to have_content("Zip can't be blank")
+    end
+  end
+
 end
