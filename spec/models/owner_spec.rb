@@ -8,5 +8,5 @@ describe Owner do
   it { should have_valid(:email).when("tthomas@test.com") }
   it { should_not have_valid(:email).when(nil,'', 12323523, "khkjehasef") }
 
-  it { should have_many :buildings}
+  it { should have_many(:buildings) }
 end
