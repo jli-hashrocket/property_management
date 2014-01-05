@@ -27,7 +27,6 @@ feature 'User assigns owner to building', %q{
       select "DC", from: "State"
       fill_in "Zip", with: zip
       fill_in "Description", with: description
-      save_and_open_page
       select "Wayne, Bruce", :from => "Owner"
       click_on "Create Building"
 

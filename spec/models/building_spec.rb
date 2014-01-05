@@ -10,5 +10,5 @@ describe Building do
   it { should have_valid(:zip).when(02134) }
   it { should_not have_valid(:address).when(nil,'') }
 
-  it { should belong_to :owner }
+  it { should belong_to(:owner).dependent(:destroy) }
 end
